@@ -1,7 +1,7 @@
 {
   "name": "uxfileviewer",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "dist/index.umd.cjs",
   "module":"dist/index.umd.cjs",
@@ -10,6 +10,19 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/houqiangxie/uxfileviewer.git"
+  },
+  "files":["dist"],
+  "keywords ": [
+  "doc",
+  "docx",
+  "pdf",
+  "txt",
+  "ppt",
+  "pptx"
+  ],
   "dependencies": {
     "@types/node": "^18.11.9",
     "docx-preview": "^0.1.14",

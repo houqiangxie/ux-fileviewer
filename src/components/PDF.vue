@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2022-11-25 10:28:00
+ * @LastEditTime: 2022-11-25 16:29:00
 -->
 <template>
   <div class="pdf-preview ">
@@ -24,7 +24,6 @@
 <script setup lang="ts">
 import { createLoadingTask, VuePdf } from "vue3-pdfjs/esm"; // 获得总页数
 import {Download } from '@/utils/common'
-console.log('Download: ', Download);
 const { url, name='pdf', showType = 'default' } = defineProps<{ url: string, name?: string, showType?:string}>()
 const state = reactive({
   source:url,// 预览pdf文件地址
