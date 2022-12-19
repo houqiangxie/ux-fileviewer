@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2022-12-19 15:13:22
+ * @LastEditTime: 2022-12-19 15:22:48
 -->
 <template>
   <div class="pdf-preview ">
@@ -33,8 +33,11 @@ const state = reactive({
 });
 
 const loadingTask = createLoadingTask(state.source);
-loadingTask.promise.then((pdf: { numPages: number }) => {
-  state.numPages = pdf.numPages;
+
+onMounted(() => {
+  loadingTask.promise.then((pdf: { numPages: number }) => {
+    state.numPages = pdf.numPages;
+  })
 })
 
 const scale = computed(() => `transform:scale(${state.scale})`)
