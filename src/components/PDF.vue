@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2022-11-25 16:29:00
+ * @LastEditTime: 2022-12-19 15:13:22
 -->
 <template>
   <div class="pdf-preview ">
@@ -62,10 +62,6 @@ function pageZoomIn() {
 const download = () => {
   new Download(url, name)
 }
-
-onMounted(() => {
-
-});
 
 </script>
 <style lang="css" scoped>
