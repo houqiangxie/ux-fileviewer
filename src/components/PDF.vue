@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2022-12-19 15:22:48
+ * @LastEditTime: 2023-03-22 15:44:16
 -->
 <template>
   <div class="pdf-preview ">
@@ -18,13 +18,14 @@
         <div class="page-tool-item" @click="download">下载</div>
       </div>
     </template>
-    <iframe v-if="showType =='iframe'" :src="state.source" class="pdf-wrap hidden-scroll-bar"></iframe>
+    <iframe v-if="showType =='iframe'" frameborder="0" :src="state.source" class="pdf-wrap hidden-scroll-bar"></iframe>
   </div>
 </template>
 <script setup lang="ts">
 import { createLoadingTask, VuePdf } from "vue3-pdfjs/esm"; // 获得总页数
 import {Download } from '@/utils/common'
-const { url, name='pdf', showType = 'default' } = defineProps<{ url: string, name?: string, showType?:string}>()
+let { url, name='pdf', showType = 'default' } = defineProps<{ url: string, name?: string, showType?:string}>()
+if(showType == 'iframe')url +='#view=FitH,top'
 const state = reactive({
   source:url,// 预览pdf文件地址
   pageNum: 1,// 当前页面
