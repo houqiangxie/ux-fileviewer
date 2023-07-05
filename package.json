@@ -1,10 +1,10 @@
 {
   "name": "ux-fileviewer",
   "private": false,
-  "version": "0.0.9",
+  "version": "0.1.0",
   "type": "module",
   "main": "dist/index.umd.cjs",
-  "module":"dist/index.umd.cjs",
+  "module": "dist/index.umd.cjs",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -12,16 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com/houqiangxie/ux-fileviewer.git"
+    "url": "git+https://github.com/houqiangxie/ux-fileviewer.git"
   },
-  "files":["dist"],
+  "files": [
+    "dist"
+  ],
   "keywords ": [
-  "doc",
-  "docx",
-  "pdf",
-  "txt",
-  "ppt",
-  "pptx"
+    "doc",
+    "docx",
+    "pdf",
+    "txt",
+    "ppt",
+    "pptx"
   ],
   "dependencies": {
     "@types/node": "^18.11.9",
@@ -31,6 +33,7 @@
     "luckyexcel": "^1.0.1",
     "naive-ui": "^2.34.2",
     "path": "^0.12.7",
+    "pdfh5": "^1.4.3",
     "sass": "^1.56.1",
     "scss": "^0.2.4",
     "unplugin-auto-import": "^0.11.5",
