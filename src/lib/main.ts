@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-11-25 10:11:03
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-05 17:20:53
+ * @LastEditTime: 2023-07-05 17:26:37
  */
 import { App } from 'vue'
 import FileViewer from '@/components/FileViewer.vue'
@@ -13,7 +13,7 @@ import PPT from '@/components/PPT.vue'
 import PDF from '@/components/PDF.vue'
 import Txt from '@/components/Txt.vue'
 import Excel from '@/components/excel/Excel.vue'
-import PDFH5 from '@/components/excel/PDFH5.vue'
+import H5PDF from '@/components/H5PDF.vue'
 // const files: any = import.meta.glob('/src/components/**/*.vue', { eager: true });
 // interface Components extends Object{
 //     [prop:string]:any
@@ -32,4 +32,4 @@ export default {
         }
     }
 }
-export { FileViewer, Docx, PPT, PDF, Txt, Excel, PDFH5 };
+export { FileViewer, Docx, PPT, PDF, Txt, Excel, H5PDF };
