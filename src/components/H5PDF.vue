@@ -14,22 +14,25 @@ import Pdfh5 from "pdfh5";
 import "pdfh5/css/pdfh5.css";
 import {Download } from '@/utils/common'
 let { url, name='pdf', showType = 'default' } = defineProps<{ url: string, name?: string, showType?:string}>()
-const pdf = ref(null)
+const pdf = ref(null);
 
+const renderPdf = ()=>{
+  const pdfh5 = new Pdfh5(pdf.value, {
+      pdfurl: url,
+      renderType: 'svg'
+    });
+    // pdfh5.on("complete", (status: any, msg: any, time: any) => {
+    //   console.log("状态：" + status + "，信息：" + msg + "，耗时：" + time + "毫秒。");
+    // });
+}
 
 onMounted(() => {
-  const pdfh5 = new Pdfh5(pdf.value, {
-    pdfurl: url,
-    renderType: 'svg'
-  });
-  // pdfh5.on("complete", (status: any, msg: any, time: any) => {
-  //   console.log("状态：" + status + "，信息：" + msg + "，耗时：" + time + "毫秒。");
-  // });
+  renderPdf()
 })
 
-const download = () => {
-  new Download(url, name)
-}
+// const download = () => {
+//   new Download(url, name)
+// };
 
 </script>
 <style lang="css" scoped>
