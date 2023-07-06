@@ -4,14 +4,14 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-06 18:07:05
+ * @LastEditTime: 2023-07-06 19:33:18
 -->
 <template>
   <div class="pdf-preview " :id="pdfId"></div>
 </template>
 <script setup lang="ts">
-// import Pdfh5 from "pdfh5";
-// import "pdfh5/css/pdfh5.css";
+import Pdfh5 from "pdfh5";
+import "pdfh5/css/pdfh5.css";
 import { Download } from '@/utils/common'
 let { url, name='pdf', } = defineProps<{ url: string, name?: string}>()
 const pdfId = 'pdf'+Date.now();
