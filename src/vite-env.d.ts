@@ -17,8 +17,8 @@ declare module '*.vue' {
 interface Window {
   $: any;
   luckysheet:any;
-  Pdfh5:any;
 }
 
 declare module "luckyexcel";
 declare module "vue3-pdfjs/esm";
+declare module "pdfh5";

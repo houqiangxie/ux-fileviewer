@@ -4,19 +4,21 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-06 14:42:37
+ * @LastEditTime: 2023-07-06 16:07:14
 -->
 <template>
   <div class="pdf-preview " :id="pdfId"></div>
 </template>
 <script setup lang="ts">
-import {Download } from '@/utils/common'
+import Pdfh5 from "pdfh5";
+import "pdfh5/css/pdfh5.css";
+import { Download } from '@/utils/common'
 let { url, name='pdf', } = defineProps<{ url: string, name?: string}>()
 const pdfId = 'pdf'+Date.now();
 
 const renderPdf = ()=>{
   nextTick(() => {
-    const pdfh5 = new window.Pdfh5('#'+pdfId, {
+    const pdfh5 = new Pdfh5('#'+pdfId, {
       pdfurl: url,
       renderType: 'svg'
     });
