@@ -27,8 +27,8 @@ dependencies:
     specifier: ^0.12.7
     version: 0.12.7
   pdfh5:
-    specifier: ^1.4.3
-    version: 1.4.3
+    specifier: 1.4.2
+    version: 1.4.2
   sass:
     specifier: ^1.56.1
     version: 1.56.1
@@ -1202,8 +1202,8 @@ packages:
     resolution: {integrity: sha512-nPdMG0Pd09HuSsr7QOKUXO2Jr9eqaDiZvDwdyIhNG5SHYujkQHYKDfGQkulBxvbDHz8oHLsTgKN86LSwYzSHAg==}
     dev: false
 
-  /pdfh5@1.4.3:
-    resolution: {integrity: sha512-gpIV1caef4Eibi9MEtWWMZUFGHFs+1jhm7OFZ309zEO9fxP3yJqYsp8V3LsQ9yjBkRysk/aMqFaZx0wNSMPbsg==}
+  /pdfh5@1.4.2:
+    resolution: {integrity: sha512-1BL8HIx/EEZowRPBgas7/WokbGEv1gxKNRmmHSimG113178mKxIBH4pxWBc0tj6d25Sy+EwnlQwv9cUUmQa42w==}
     dev: false
 
   /pdfjs-dist@2.16.105:
