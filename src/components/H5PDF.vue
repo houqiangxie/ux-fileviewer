@@ -10,8 +10,6 @@
   <div class="pdf-preview " :id="pdfId"></div>
 </template>
 <script setup lang="ts">
-import Pdfh5 from "pdfh5";
-import "pdfh5/css/pdfh5.css";
 import {Download } from '@/utils/common'
 let { url, name='pdf', } = defineProps<{ url: string, name?: string}>()
 const pdfId = 'pdf'+Date.now();
