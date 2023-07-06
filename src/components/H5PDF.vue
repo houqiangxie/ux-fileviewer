@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-06 12:02:36
+ * @LastEditTime: 2023-07-06 14:42:37
 -->
 <template>
   <div class="pdf-preview " :id="pdfId"></div>
@@ -16,7 +16,7 @@ const pdfId = 'pdf'+Date.now();
 
 const renderPdf = ()=>{
   nextTick(() => {
-    const pdfh5 = new Pdfh5('#'+pdfId, {
+    const pdfh5 = new window.Pdfh5('#'+pdfId, {
       pdfurl: url,
       renderType: 'svg'
     });
