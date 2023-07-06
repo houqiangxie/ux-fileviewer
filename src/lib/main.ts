@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-11-25 10:11:03
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-05 17:26:37
+ * @LastEditTime: 2023-07-06 10:56:04
  */
 import { App } from 'vue'
 import FileViewer from '@/components/FileViewer.vue'
@@ -24,7 +24,7 @@ import H5PDF from '@/components/H5PDF.vue'
 //     componentsObj[name] = files[key].default || files[key];
 // })
 
-const componentsObj:any= {FileViewer,Docx,PPT,PDF,Txt, Excel}
+const componentsObj: any = { FileViewer, Docx, PPT, PDF, Txt, Excel, H5PDF }
 export default {
     install: (app: App) => {
         for (const key of componentsObj) {
