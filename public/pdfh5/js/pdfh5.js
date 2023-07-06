@@ -20,8 +20,8 @@
 	} else if (typeof module !== 'undefined' && module.exports) {
 		module.exports = fn(g, pdfjsWorker, pdfjsLib, $, version)
 	} else {
-		g.Pdfh5 = fn(g, pdfjsWorker, pdfjsLib, $, version)
 	}
+	g.Pdfh5 = fn(g, pdfjsWorker, pdfjsLib, $, version)
 })(typeof window !== 'undefined' ? window : this, function(g, pdfjsWorker, pdfjsLib, $, version) {
 	'use strict';
 
