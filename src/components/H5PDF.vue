@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-06 11:43:49
+ * @LastEditTime: 2023-07-06 12:02:36
 -->
 <template>
   <div class="pdf-preview " :id="pdfId"></div>
@@ -38,7 +38,7 @@ watchEffect(() => {
 
 </script>
 <style lang="css" >
-::-webkit-scrollbar {
+.pdf-preview ::-webkit-scrollbar {
   /*滚动条整体样式*/
   width: 0;
   /*高宽分别对应横竖滚动条的尺寸*/
@@ -56,5 +56,8 @@ watchEffect(() => {
 
 .pageContainer{
   max-width: 100% !important;
+}
+.pdfjs .pdfViewer{
+  padding: 0 !important;
 }
 </style>

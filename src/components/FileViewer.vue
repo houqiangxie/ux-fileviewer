@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-08-04 11:28:22
  * @LastEditors: houqiangxie
- * @LastEditTime: 2022-11-25 09:36:40
+ * @LastEditTime: 2023-07-06 12:04:39
 -->
 <template>
     <n-modal v-model:show="modalValue" class=" file-preview">
@@ -12,7 +12,7 @@
             <template #header-extra>
                 <img class="image" src="@/assets/close.png" alt="" @click="close">
             </template>
-            <PDF v-if="fileType=='pdf'" :url="url" :name="name" :showType="showType"></PDF>
+            <H5PDF v-if="fileType=='pdf'" :url="url" :name="name" :showType="showType"></H5PDF>
             <Docx v-if="fileType=='docx'" :url="url" :name="name"></Docx>
             <Excel v-if="fileType=='xlsx'||fileType=='xls'" :url="url" :name="name"></Excel>
             <PPT v-if="fileType=='pptx'||fileType=='ppt'" :url="url" :name="name"></PPT>
@@ -28,6 +28,7 @@ import PDF from '@/components/PDF.vue'
 import Excel from '@/components/excel/Excel.vue'
 import Docx from '@/components/Docx.vue'
 import Txt from '@/components/Txt.vue'
+import H5PDF from '@/components/H5PDF.vue'
 const { url, value, name = '查看文件', showType = 'default' } = defineProps<{ url: string, value: boolean, name?: string, showType?: string, }>()
 const a = ref(true)
 const fileType = computed<string>(() => url.split('.').pop()?.toLocaleLowerCase() as string)
