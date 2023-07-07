@@ -4,16 +4,16 @@
  * @Author: houqiangxie
  * @Date: 2022-08-04 17:41:54
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-07 10:10:49
+ * @LastEditTime: 2023-07-07 11:20:35
 -->
 <template>
     <div class="docx-preview ">
         <div class="docx-content" ref="previewDocx"></div>
-        <div class="page-tool">
+        <!-- <div class="page-tool">
             <div class="page-tool-item" @click="pageZoomOut">放大</div>
             <div class="page-tool-item" @click="pageZoomIn">缩小</div>
             <div class="page-tool-item" @click="download">下载</div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -23,7 +23,7 @@ import * as docx from 'docx-preview'
 import { Download } from '@/utils/common'
 const { name, url } = defineProps<{ name?: string, url:string}>()
 const state = reactive({
-    scale:2
+    scale:1
 })
 const previewDocx = ref()
 onMounted(async () => {
@@ -59,9 +59,9 @@ const download = () => {
   position: relative;
   height: calc(100vh - 113px);
   width: 100%;
-  padding: 20px 0;
+  /* padding: 20px 0; */
   box-sizing: border-box;
-  background-color: e9e9e9;
+  background-color: #e9e9e9;
   overflow: hidden;
 }
 
@@ -80,13 +80,13 @@ const download = () => {
     background:#fff !important;
     padding: 0 !important;
     .docx{
-        width: auto !important;
-        padding: 0rem !important;
+        /* width: auto !important; */
+        padding: 0 !important;
         min-height: auto !important;
         box-shadow: none !important;
         margin-bottom: 0 !important;
-        transform-origin: top center;
-        transform:scale(v-bind('state.scale'))
+        /* transform-origin: top left;
+        transform:scale(v-bind('state.scale')) */
     }
     /* .docx{
         width: 100% !important;
