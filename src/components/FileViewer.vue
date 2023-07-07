@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-08-04 11:28:22
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-06 12:04:39
+ * @LastEditTime: 2023-07-07 09:41:58
 -->
 <template>
     <n-modal v-model:show="modalValue" class=" file-preview">
@@ -12,7 +12,7 @@
             <template #header-extra>
                 <img class="image" src="@/assets/close.png" alt="" @click="close">
             </template>
-            <H5PDF v-if="fileType=='pdf'" :url="url" :name="name" :showType="showType"></H5PDF>
+            <PDF v-if="fileType=='pdf'" :url="url" :name="name" :showType="showType"></PDF>
             <Docx v-if="fileType=='docx'" :url="url" :name="name"></Docx>
             <Excel v-if="fileType=='xlsx'||fileType=='xls'" :url="url" :name="name"></Excel>
             <PPT v-if="fileType=='pptx'||fileType=='ppt'" :url="url" :name="name"></PPT>

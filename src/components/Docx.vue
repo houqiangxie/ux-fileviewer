@@ -4,11 +4,11 @@
  * @Author: houqiangxie
  * @Date: 2022-08-04 17:41:54
  * @LastEditors: houqiangxie
- * @LastEditTime: 2022-11-25 10:28:06
+ * @LastEditTime: 2023-07-07 10:10:49
 -->
 <template>
     <div class="docx-preview ">
-        <div class="docx-content" ref="previewDocx" :style="scale"></div>
+        <div class="docx-content" ref="previewDocx"></div>
         <div class="page-tool">
             <div class="page-tool-item" @click="pageZoomOut">放大</div>
             <div class="page-tool-item" @click="pageZoomIn">缩小</div>
@@ -23,7 +23,7 @@ import * as docx from 'docx-preview'
 import { Download } from '@/utils/common'
 const { name, url } = defineProps<{ name?: string, url:string}>()
 const state = reactive({
-    scale:1.5
+    scale:2
 })
 const previewDocx = ref()
 onMounted(async () => {
@@ -69,9 +69,28 @@ const download = () => {
     width:100%;
     height:100%;
     overflow: auto;
+    &::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 0;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 0;
+    }
 }
 .docx-wrapper{
     background:#fff !important;
+    padding: 0 !important;
+    .docx{
+        width: auto !important;
+        padding: 0rem !important;
+        min-height: auto !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+        transform-origin: top center;
+        transform:scale(v-bind('state.scale'))
+    }
+    /* .docx{
+        width: 100% !important;
+    } */
 }
 
 .page-tool {
