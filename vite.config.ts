@@ -4,12 +4,13 @@
  * @Author: houqiangxie
  * @Date: 2022-11-24 17:13:54
  * @LastEditors: houqiangxie
- * @LastEditTime: 2022-11-25 14:44:05
+ * @LastEditTime: 2023-07-11 14:21:25
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve, join } from "path";
 import AutoImport from "unplugin-auto-import/vite";
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 // import dts from "vite-plugin-dts";
 const pathResolve = (dir: string): string => resolve(__dirname, ".", dir);
 // https://vitejs.dev/config/
@@ -21,6 +22,7 @@ export default defineConfig({
       },
       reactivityTransform: true, //解构保持响应式
     }),
+    libInjectCss(),
     // dts({include:'src/lib/'}),
     // 自动引入
     AutoImport({
@@ -82,6 +84,6 @@ export default defineConfig({
         },
       },
     },
-    cssCodeSplit:true,
+    // cssCodeSplit:true,
   },
 });

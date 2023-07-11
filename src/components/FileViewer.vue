@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-08-04 11:28:22
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-07 11:32:34
+ * @LastEditTime: 2023-07-11 11:47:32
 -->
 <template>
     <n-modal v-model:show="modalValue" class=" file-preview">
@@ -17,6 +17,7 @@
             <Excel v-if="fileType=='xlsx'||fileType=='xls'" :url="url" :name="name"></Excel>
             <PPT v-if="fileType=='pptx'||fileType=='ppt'" :url="url" :name="name"></PPT>
             <Txt v-if="fileType=='txt'" :url="url" :name="name"></Txt>
+            <Ofd v-if="fileType=='ofd'" :url="url" :name="name"></Ofd>
         </n-card>
     </n-modal>
 </template>
@@ -29,6 +30,7 @@ import Excel from '@/components/excel/Excel.vue'
 import Docx from '@/components/Docx.vue'
 import Txt from '@/components/Txt.vue'
 import H5PDF from '@/components/H5PDF.vue'
+import Ofd from '@/components/Ofd.vue'
 const { url, value, name = '查看文件', showType = 'default' } = defineProps<{ url: string, value: boolean, name?: string, showType?: string, }>()
 const a = ref(true)
 const fileType = computed<string>(() => url.split('.').pop()?.toLocaleLowerCase() as string)
