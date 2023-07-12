@@ -36,10 +36,10 @@ const state = reactive({
 
 // const loadingTask = createLoadingTask(state.source);
 
-onMounted(() => {
-  loadingTask.promise.then((pdf: { numPages: number }) => {
-    state.numPages = pdf.numPages;
-  })
+// onMounted(() => {
+//   loadingTask.promise.then((pdf: { numPages: number }) => {
+//     state.numPages = pdf.numPages;
+//   })
 })
 
 const scale = computed(() => `transform:scale(${state.scale})`)
