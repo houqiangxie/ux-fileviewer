@@ -40,7 +40,7 @@ const state = reactive({
 //   loadingTask.promise.then((pdf: { numPages: number }) => {
 //     state.numPages = pdf.numPages;
 //   })
-})
+// })
 
 const scale = computed(() => `transform:scale(${state.scale})`)
 function lastPage() {
