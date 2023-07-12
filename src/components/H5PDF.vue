@@ -26,6 +26,9 @@ const renderPdf = ()=>{
       pdfurl: fileUrl.value,
       renderType: 'svg'
     });
+    pdfh5.on("success", ( msg: any, time: any) => {
+      console.log("信息：" + msg + "，耗时：" + time + "毫秒。");
+    });
     pdfh5.on("error", ( msg: any, time: any) => {
       console.log("信息：" + msg + "，耗时：" + time + "毫秒。");
       fileUrl.value += '#view=FitH,top'

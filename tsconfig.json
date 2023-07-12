@@ -17,7 +17,7 @@
       // 用于设置模块名到基于baseUrl的路径映射
       "@/*": ["src/*"]
     },
-    "types":["vite/client"]
+    "types":["vite/client","@vue-macros/reactivity-transform/macros-global"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
 }

@@ -4,24 +4,21 @@
  * @Author: houqiangxie
  * @Date: 2022-11-24 17:13:54
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-11 14:21:25
+ * @LastEditTime: 2023-07-12 15:28:42
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve, join } from "path";
 import AutoImport from "unplugin-auto-import/vite";
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import ReactivityTransform from '@vue-macros/reactivity-transform/vite'
 // import dts from "vite-plugin-dts";
 const pathResolve = (dir: string): string => resolve(__dirname, ".", dir);
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue({
-      script: {
-        refSugar: true, //ref转换
-      },
-      reactivityTransform: true, //解构保持响应式
-    }),
+    vue(),
+    ReactivityTransform(),
     libInjectCss(),
     // dts({include:'src/lib/'}),
     // 自动引入
@@ -84,6 +81,6 @@ export default defineConfig({
         },
       },
     },
-    // cssCodeSplit:true,
+    cssCodeSplit:true,
   },
 });

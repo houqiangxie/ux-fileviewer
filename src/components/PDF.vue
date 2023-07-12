@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-06 19:34:46
+ * @LastEditTime: 2023-07-12 16:11:06
 -->
 <template>
   <div class="pdf-preview ">
@@ -22,7 +22,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { createLoadingTask, VuePdf } from "vue3-pdfjs/esm"; // 获得总页数
+// import { createLoadingTask, VuePdf } from "vue3-pdfjs/esm"; // 获得总页数
 import {Download } from '@/utils/common'
 const { url, name = 'pdf', showType = 'default' } = defineProps<{ url: string, name?: string, showType?: string }>()
 let fileUrl = url
@@ -34,7 +34,7 @@ const state = reactive({
   numPages: 0, // 总页数
 });
 
-const loadingTask = createLoadingTask(state.source);
+// const loadingTask = createLoadingTask(state.source);
 
 onMounted(() => {
   loadingTask.promise.then((pdf: { numPages: number }) => {

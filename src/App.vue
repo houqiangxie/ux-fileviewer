@@ -4,11 +4,13 @@
  * @Author: houqiangxie
  * @Date: 2022-11-24 17:13:54
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-07 11:30:52
+ * @LastEditTime: 2023-07-12 09:58:45
 -->
 <script setup lang="ts">
-import H5PDF from '@/components/H5PDF.vue'
-import { PPT, FileViewer } from './lib/main';
+// import H5PDF from '@/components/H5PDF.vue'
+import { PPT, FileViewer, H5PDF } from './lib/main';
+// import { PPT, FileViewer, H5PDF } from '../dist/index.js';
+console.log('H5PDF: ', H5PDF);
 const showModal = ref({visible: true})
 </script>
 

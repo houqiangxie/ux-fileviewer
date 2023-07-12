@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { NModal, NCard } from 'naive-ui'
 import PPT from '@/components/PPT.vue'
-import PDF from '@/components/PDF.vue'
+// import PDF from '@/components/PDF.vue'
 import Excel from '@/components/excel/Excel.vue'
 import Docx from '@/components/Docx.vue'
 import Txt from '@/components/Txt.vue'
