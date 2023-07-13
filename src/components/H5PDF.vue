@@ -57,6 +57,9 @@ defineExpose({pdfh5})
 
 .pageContainer{
   max-width: 100% !important;
+  max-height: 10000px !important;
+  margin-bottom: 0 !important;
+  box-shadow: none !important;
 }
 .pdfjs .pdfViewer{
   padding: 0 !important;

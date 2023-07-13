@@ -4,9 +4,9 @@
  * @Author: houqiangxie
  * @Date: 2022-11-24 17:13:54
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-13 11:12:34
+ * @LastEditTime: 2023-07-13 15:00:18
 -->
-# Vue 3 + TypeScript + Vite  文件在线预览组件 支持PDF,Docx,PPT,Excel，Txt
+# Vue 3 + TypeScript + Vite  文件在线预览组件 支持PDF,Docx,PPT,Excel，Txt,ofd格式在线榆林
 
 ##使用方法
 ```javascript
