@@ -4,11 +4,11 @@
  * @Author: houqiangxie
  * @Date: 2022-06-17 09:31:01
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-07 11:31:56
+ * @LastEditTime: 2023-07-13 11:14:23
 -->
 <template>
-  <div class="pdf-preview " v-if="pdfType == 'default'" :id="pdfId"></div>
-  <iframe class="pdf-preview " v-if="pdfType == 'iframe'" frameborder="0" :src="fileUrl"></iframe>
+  <div class="pdf-preview " :id="pdfId"></div>
+  <!-- <iframe class="pdf-preview " v-if="pdfType == 'iframe'" frameborder="0" :src="fileUrl"></iframe> -->
 </template>
 <script setup lang="ts">
 import Pdfh5 from "pdfh5";
@@ -17,33 +17,25 @@ import { Download } from '@/utils/common'
 const { url, name = 'pdf', showType = 'default' } = defineProps<{ url: string, name?: string, showType?: string }>()
 const fileUrl = ref(url)
 const pdfType=ref(showType)
-if (showType == 'iframe') fileUrl.value += '#view=FitH,top'
+// if (showType == 'iframe') fileUrl.value += '#view=FitH,top'
 const pdfId = 'pdf'+Date.now();
-
+const pdfh5 = ref()
 const renderPdf = ()=>{
   nextTick(() => {
-    const pdfh5 = new Pdfh5('#'+pdfId, {
+    pdfh5.value = new Pdfh5('#'+pdfId, {
       pdfurl: fileUrl.value,
       renderType: 'svg'
     });
-    pdfh5.on("success", ( msg: any, time: any) => {
-      console.log("信息：" + msg + "，耗时：" + time + "毫秒。");
-    });
-    pdfh5.on("error", ( msg: any, time: any) => {
-      console.log("信息：" + msg + "，耗时：" + time + "毫秒。");
-      fileUrl.value += '#view=FitH,top'
-      pdfType.value == 'iframe'
-    });
+    // pdfh5.value.on("success", ( msg: any, time: any) => {
+    //   console.log("信息：" + msg + "，耗时：" + time + "毫秒。");
+    // });
   })
 }
 
 watchEffect(() => {
   if(url)renderPdf()
 })
-
-// const download = () => {
-//   new Download(url, name)
-// };
+defineExpose({pdfh5})
 
 </script>
 <style lang="css" >
