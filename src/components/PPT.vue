@@ -4,30 +4,30 @@
  * @Author: houqiangxie
  * @Date: 2022-09-20 10:51:35
  * @LastEditors: houqiangxie
- * @LastEditTime: 2022-11-25 10:08:21
+ * @LastEditTime: 2025-02-25 10:32:56
 -->
 <template>
-    <div class="ppt-preview ">
-        <div id="ppt" ref="PPT"></div>
+    <div class="ppt-preview " ref="pptBox">
+        <div ref="PPT" class="w-full h-full"></div>
     </div>
 </template>
 
 <script setup lang="ts">
+import { init } from 'pptx-preview'
+console.log('init: ', init);
 const { name, url } = defineProps<{ name?: string, url: string }>()
 const PPT = ref()
+const pptBox = ref()
+let pptxPreviewer
 onMounted(async () => {
-    window.$("#ppt").pptxToHtml({
-        pptxFileUrl: url,
-        // fileInputId: "uploadFileInput", /*id of input tag*/
-        // slideMode: true,
-        slidesScale: "100%",
-        keyBoardShortCut: false
-    });
+    pptxPreviewer = init(PPT.value, {
+        width: pptBox.value.offsetWidth,
+        height: pptBox.value.offsetHeight,
+    })
+    url&&pptxPreviewer.preview(url)
 })
-
-onBeforeUnmount(() => {
-    // console.log('PPT.value: ', PPT.value);
-    PPT.value.innerHTML=''
+watchEffect(() => {
+    if (url && pptxPreviewer) pptxPreviewer.preview(url)
 })
 </script>
 

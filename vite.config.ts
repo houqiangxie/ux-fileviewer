@@ -4,21 +4,20 @@
  * @Author: houqiangxie
  * @Date: 2022-11-24 17:13:54
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-12 15:28:42
+ * @LastEditTime: 2025-02-25 09:49:11
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve, join } from "path";
 import AutoImport from "unplugin-auto-import/vite";
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
-import ReactivityTransform from '@vue-macros/reactivity-transform/vite'
+// import ReactivityTransform from '@vue-macros/reactivity-transform/vite'
 // import dts from "vite-plugin-dts";
 const pathResolve = (dir: string): string => resolve(__dirname, ".", dir);
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
-    ReactivityTransform(),
     libInjectCss(),
     // dts({include:'src/lib/'}),
     // 自动引入
@@ -42,7 +41,7 @@ export default defineConfig({
     // 设置代理，根据我们项目实际情况配置
     open: false, // 设置服务启动时是否自动打开浏览器
     cors: true, // 允许跨域
-    port: 82,
+    port: 83,
     hmr: { overlay: false },
     host: "0.0.0.0",
     proxy: {

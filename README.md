@@ -24,22 +24,12 @@ import 'ux-fileviewer/dist/main.css'
 ## 在html中引入public中的文件
 ```html
 <!-- 在这里全局引入luckysheet的样式文件和js文件  -->
-      <script type="text/javascript" src="/pptx/js/jquery-1.11.3.min.js"></script>
       <link rel="stylesheet" href="/LuckySheet/pluginsCss.css" />
       <link rel="stylesheet" href="/LuckySheet/plugins.css" />
       <link rel="stylesheet" href="/LuckySheet/luckysheet.css" />
       <link rel="stylesheet" href="/LuckySheet/iconfont.css" />
       <script src="/LuckySheet/plugin.js"></script>
       <script src="/LuckySheet/luckysheet.umd.js"></script>
-      <!-- pptx -->
-      <link rel="stylesheet" href="/pptx/css/pptxjs.css">
-      <link rel="stylesheet" href="/pptx/css/nv.d3.min.css"> <!-- for charts graphs -->
-      <script type="text/javascript" src="/pptx/js/jszip.min.js"></script> <!-- v2.. , NOT v.3.. -->
-      <script type="text/javascript" src="/pptx/js/filereader.js"></script>
-      <script type="text/javascript" src="/pptx/js/d3.min.js"></script> <!-- for charts graphs -->
-      <script type="text/javascript" src="/pptx/js/nv.d3.min.js"></script> <!-- for charts graphs -->
-      <script type="text/javascript" src="/pptx/js/pptxjs.js"></script>
-      <script type="text/javascript" src="/pptx/js/divs2slides.js"></script> <!-- for slide show -->
 ```
 
 

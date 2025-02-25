@@ -4,7 +4,7 @@
  * @Author: houqiangxie
  * @Date: 2022-08-04 11:28:22
  * @LastEditors: houqiangxie
- * @LastEditTime: 2023-07-11 11:47:32
+ * @LastEditTime: 2025-02-25 09:55:23
 -->
 <template>
     <n-modal v-model:show="modalValue" class=" file-preview">
@@ -31,9 +31,9 @@ import Docx from '@/components/Docx.vue'
 import Txt from '@/components/Txt.vue'
 import H5PDF from '@/components/H5PDF.vue'
 import Ofd from '@/components/Ofd.vue'
-const { url, value, name = '查看文件', showType = 'default' } = defineProps<{ url: string, value: boolean, name?: string, showType?: string, }>()
+const { url, value, name = '查看文件', showType = 'default',type='' } = defineProps<{ url: string, value: boolean, name?: string, showType?: string,type?:string}>()
 const a = ref(true)
-const fileType = computed<string>(() => url.split('.').pop()?.toLocaleLowerCase() as string)
+const fileType = computed<string>(() => type|| url.split('.').pop()?.toLocaleLowerCase() as string)
 const emits = defineEmits<{ (e: 'update:value', payload: boolean): void }>()
 
 const modalValue = computed({
