@@ -18,7 +18,7 @@ console.log('init: ', init);
 const { name, url } = defineProps<{ name?: string, url: string }>()
 const PPT = ref()
 const pptBox = ref()
-let pptxPreviewer
+let pptxPreviewer: any
 onMounted(async () => {
     pptxPreviewer = init(PPT.value, {
         width: pptBox.value.offsetWidth,
